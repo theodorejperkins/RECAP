@@ -10,7 +10,8 @@
 #
 # HISTORY:
 #   03/11/2017 - v1.0.0 - First Creation
-#	29/01/2018 - v1.0.1 - Minor commenting update 
+#   29/01/2018 - v1.0.1 - Minor commenting update 
+#   16/01/2019 - v1.0.2 - Better instructions
 #
 # CREDITS:
 # RECAP was developed by Justin G. Chitpin and Theodore J. Perkins.
@@ -28,7 +29,7 @@
 
 # ===============================================================
 # Script version number
-VERSION="1.0.1"     
+VERSION="1.0.2"
 # Provide a variable with the location of this script.
 SCRIPT_PATH="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 # Text display commands
@@ -54,10 +55,10 @@ echo "##################################################"
 echo "######         RECAP RE-MIX  v$VERSION         ######"
 echo "##################################################"
 echo ""
-echo "Input directory:    $INPUT_DIR"
+echo "Input directory  (absolute path):    $INPUT_DIR"
 echo "Treatment library:  $TREATMENT_NAME"
 echo "Control library:    $CONTROL_NAME"
-echo "Output directory:   $OUTPUT_DIR"
+echo "Output directory (absolute path):   $OUTPUT_DIR"
 echo "Re-mix method:      $METHOD_NAME"
 echo "Number of re-mixes: $BOOTSTRAP"
 
@@ -158,13 +159,15 @@ usage() {
   [Input directory]  [Treatment file] [Control file] 
   [Output directory] [Re-mix method]  [Bootstrap]
 
- ${bold}Options:${normal}
-  -i, --input 	    Input file directory
-  -t, --treatment   Treatment file
-  -c, --control     Control file
-  -o, --output      Output file directory
+ ${bold}USAGE:${normal}
+  -i, --input 	    Input file directory (absolute path) 
+  -t, --treatment   Treatment bed file
+  -c, --control     Control bed file
+  -o, --output      Output file directory (absolute path)
   -m, --method      Method of re-mixing (equal) or (unequal)
   -b, --bootstrap   Number of re-mixes
+
+ ${bold}OPTIONS:${normal}
   -h, --help        Display this help and exit
 "
 }
