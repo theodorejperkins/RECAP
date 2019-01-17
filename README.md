@@ -1,4 +1,5 @@
 Please see <https://github.com/theodorejperkins/RECAP> for the latest stable build.  
+Please see <https://github.com/jchitpin/RECAP> for other iterations of the code.
 Last edited 16-January-2019
 
 ## Introduction
