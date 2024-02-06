@@ -41,10 +41,10 @@ jobs:
         uses: docker/build-push-action@v4
         with:
           push: ${{ github.event_name != 'pull_request' }}
-          tags: ${{ env.NAMESPACE }}/${{ env.IMAGE_NAME }}:${{ steps.vars.outputs.VERSION_TAG }}
+          tags: ${{ env.NAMESPACE }}/${{ env.IMAGE_NAME }}:${{ env.VERSION_TAG }}
           context: ${{ env.CONTEXT }}
           file: ${{ env.CONTEXT }}/Dockerfile
           build-args: |
             BUILD_DATE=${{ steps.vars.outputs.DATE }}
-            BUILD_TAG=${{ steps.vars.outputs.VERSION_TAG }}
+            BUILD_TAG=${{ env.VERSION_TAG }}
             REPONAME=${{ env.IMAGE_NAME }}
