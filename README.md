@@ -1,3 +1,13 @@
+# CCBR RECAP fork
+
+This is a fork of RECAP, originally introduced in:
+
+> Justin G Chitpin, Aseel Awdeh, Theodore J Perkins, RECAP reveals the true statistical significance of ChIP-seq peak calls, Bioinformatics, Volume 35, Issue 19, October 2019, Pages 3592–3598, https://doi.org/10.1093/bioinformatics/btz150
+
+The original readme is below:
+
+# README
+
 Please see <https://github.com/theodorejperkins/RECAP> for the latest stable build.  
 Please see <https://github.com/jchitpin/RECAP> for other iterations of the code.
 Last edited 16-January-2019
