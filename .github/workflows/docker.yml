@@ -6,7 +6,7 @@ on:
     branches:
       - docker
     paths:
-      - .github/workflow/docker.yml
+      - .github/workflows/docker.yml
       - Dockerfile
 
 env:
