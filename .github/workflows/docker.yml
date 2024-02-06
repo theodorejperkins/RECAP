@@ -10,7 +10,7 @@ on:
       - Dockerfile
 
 env:
-  IMAGE_NAME: RECAP
+  IMAGE_NAME: recap
   CONTEXT: "./"
   NAMESPACE: nciccbr
   VERSION_TAG: 0.1.0
