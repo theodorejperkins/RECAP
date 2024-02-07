@@ -66,6 +66,7 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
 	parallel \
     perl \
     liblist-allutils-perl \
+	liblist-moreutils-perl \
     libmath-utils-perl \
 	pigz \
     pkg-config \
