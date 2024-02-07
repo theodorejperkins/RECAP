@@ -35,8 +35,8 @@
 VERSION="1.0.2"     
 # Provide a variable for the location of this and other scripts
 SCRIPT_PATH="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-REMIX_PATH=$(find ~/ -type f -name "RECAP_Re-Mix.sh" | head -n 1)
-PERL_PATH=$(find ~/ -type f -name "RECAP.pl" | head -n 1)
+REMIX_PATH=${SCRIPT_PATH}/RECAP_Re-Mix.sh
+PERL_PATH=${SCRIPT_PATH}/RECAP.pl
 # Text display commands
 bold=$(tput bold)
 normal=$(tput sgr0)
