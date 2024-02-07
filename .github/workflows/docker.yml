@@ -13,7 +13,7 @@ env:
   IMAGE_NAME: recap
   CONTEXT: "./"
   NAMESPACE: nciccbr
-  VERSION_TAG: 0.2.0
+  VERSION_TAG: 0.2.1
 
 jobs:
   build-docker:
