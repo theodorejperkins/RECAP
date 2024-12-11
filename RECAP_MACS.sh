@@ -92,7 +92,7 @@ then
 fi
 
 # 1) Re-mix ChIP and control bed files
-bash $REMIX_PATH -i $INPUT_DIR -t $CHIP_NAME -c $CONTROL_NAME -o $OUTPUT_DIR -m unequal -b $BOOTSTRAP
+bash $REMIX_PATH -i $INPUT_DIR -t $CHIP_NAME -c $CONTROL_NAME -o $OUTPUT_DIR -m unequal -b $BOOTSTRAP -s $SEED
 
 # 2) Call original peaks using MACS
 # Please specify your own MACS parameters!
@@ -186,9 +186,10 @@ while [[ $1 = -?* ]]; do
    	-t|--treatment) shift; CHIP_NAME=${1} ;;
    	-c|--control)   shift; CONTROL_NAME=${1} ;;
    	-o|--output)    shift; OUTPUT_DIR=${1} ;;
-	-b|--bootstrap) shift; BOOTSTRAP=${1} ;;
-	-e|--header)    shift; HEADER=${1} ;;
-	-h|--help)      usage >&2; exit 0 ;;
+	  -b|--bootstrap) shift; BOOTSTRAP=${1} ;;
+		-s|--seed)      shift; SEED=${1} ;;
+	  -e|--header)    shift; HEADER=${1} ;;
+	  -h|--help)      usage >&2; exit 0 ;;
 		*)       echo "ERROR: Bad argument ${1}" ; exit 1 ;;
 	esac
 	shift

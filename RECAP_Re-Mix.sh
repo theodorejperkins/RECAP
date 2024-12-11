@@ -44,6 +44,12 @@ normal=$(tput sgr0)
 # Default values are below
 # ===============================================================
 
+# source: https://www.gnu.org/software/coreutils/manual/html_node/Random-sources.html
+function get_seeded_random() {
+  seed="$1"
+  openssl enc -aes-256-ctr -pass pass:"$seed" -nosalt \
+    </dev/zero 2>/dev/null
+}
 
 function mainRemix() {
 ####################### Begin Script Here #######################
@@ -61,6 +67,7 @@ echo "Control library:    $CONTROL_NAME"
 echo "Output directory (absolute path):   $OUTPUT_DIR"
 echo "Re-mix method:      $METHOD_NAME"
 echo "Number of re-mixes: $BOOTSTRAP"
+echo "Random seed: $SEED"
 
 if [[ ! -d $INPUT_DIR ]]
 then
@@ -125,7 +132,7 @@ do
 	fi
 	
 	echo "Re-mixing..."
-	shuf -o $TREATMENT_NAME_BASE.bootstrap_$BOOTSTRAP_COUNT.tmp < $TREATMENT_NAME_BASE.bootstrap_$BOOTSTRAP_COUNT.tmp
+	shuf --random-source=<(get_seeded_random $SEED) -o $TREATMENT_NAME_BASE.bootstrap_$BOOTSTRAP_COUNT.tmp < $TREATMENT_NAME_BASE.bootstrap_$BOOTSTRAP_COUNT.tmp
 	echo "Check!"
 	
 	echo "Creating re-mixed treatment library"
@@ -221,6 +228,7 @@ while [[ $1 = -?* ]]; do
 							exit 1
 						fi ;;
 		-b|--bootstrap) shift; BOOTSTRAP=${1} ;;
+		-s|--seed)      shift; SEED=${1} ;;
 		-h|--help)      usage >&2; exit 0 ;;
 		*)              echo "ERROR: Bad argument ${1}" ; exit 1 ;;
 	esac
